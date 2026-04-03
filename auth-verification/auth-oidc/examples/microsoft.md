@@ -1,44 +1,43 @@
-:::tip Уведомление о переводе ИИ
-Эта документация была автоматически переведена ИИ.
-:::
+# Идентификатор Microsoft Entra (Microsoft Entra ID)
 
-# Microsoft Entra ID
+> [https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app)  
+> [https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc](https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc)
 
-> https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app  
-> https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc
+## Добавить аутентификатор в NocoBase
 
-## Добавление аутентификатора в NocoBase
+Сначала добавьте новый аутентификатор в NocoBase: Параметры плагина — Аутентификация пользователей — Добавить — OIDC.
 
-Сначала добавьте новый аутентификатор в NocoBase: Настройки плагинов - Аутентификация пользователя - Добавить - OIDC.
+Скопируйте callback URL.
 
-Скопируйте URL-адрес обратного вызова.
 
-![](https://static-docs.nocobase.com/202412021504114.png)
 
-## Регистрация приложения
+## Зарегистрируйте приложение
 
-Откройте центр администрирования Microsoft Entra и зарегистрируйте новое приложение.
+Откройте Microsoft Entra admin center и зарегистрируйте новое приложение.
 
-![](https://static-docs.nocobase.com/202412021506837.png)
 
-Вставьте сюда URL-адрес обратного вызова, который вы только что скопировали.
 
-![](https://static-docs.nocobase.com/202412021520696.png)
+Вставьте сюда callback URL, который вы только что скопировали.
 
-## Получение и ввод необходимой информации
 
-Откройте только что зарегистрированное приложение и скопируйте **Application (client) ID** и **Directory (tenant) ID** со страницы обзора.
 
-![](https://static-docs.nocobase.com/202412021522063.png)
+## Получите и заполните нужную информацию
 
-Нажмите `Certificates & secrets`, создайте новый секрет клиента (client secret) и скопируйте **Value**.
+Перейдите в только что зарегистрированное приложение и скопируйте **Application (client) ID** и **Directory (tenant) ID** со страницы обзора.
 
-![](https://static-docs.nocobase.com/202412021522846.png)
 
-Соответствие между информацией Microsoft Entra и конфигурацией аутентификатора NocoBase выглядит следующим образом:
 
-| Информация Microsoft Entra    | Поле аутентификатора NocoBase                                                                                                                            |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Application (client) ID       | Client ID                                                                                                                                                |
-| Client secrets - Value        | Client secret                                                                                                                                            |
-| Directory (tenant) ID         | Issuer:<br />`https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration`, `{tenant}` необходимо заменить на соответствующий Directory (tenant) ID |
+Нажмите `Certificates & secrets`, создайте новый секрет клиента и скопируйте значение **Value**.
+
+
+
+Соответствие информации Microsoft Entra полям аутентификатора в NocoBase:
+
+
+| Информация Microsoft Entra | Поле аутентификатора в NocoBase                                                                                                                                                                                            |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Application (client) ID    | Клиент ID                                                                                                                                                                                                                  |
+| Client secrets - Value     | Клиент secret                                                                                                                                                                                                              |
+| Directory (tenant) ID      | Поставщик: [https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration](https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration), замените `{tenant}` на Directory (tenant) ID |
+
+
