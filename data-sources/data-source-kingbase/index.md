@@ -1,33 +1,29 @@
 ---
 pkg: "@nocobase/plugin-data-source-kingbase"
 ---
-:::tip Уведомление о переводе ИИ
-Эта документация была автоматически переведена ИИ.
-:::
 
-
-# Источник данных - KingbaseES
+# Источник данных - база данных KingbaseES
 
 ## Введение
 
-Вы можете использовать базу данных KingbaseES в качестве источника данных, как основную, так и внешнюю базу данных.
+KingbaseES может использоваться как источник данных — как основная база данных или как внешняя база данных.
 
 :::warning
-В настоящее время поддерживаются только базы данных KingbaseES, работающие в режиме pg.
+Сейчас поддерживаются только базы данных KingbaseES, работающие в режиме pg.
 :::
 
 ## Установка
 
-### Использование в качестве основной базы данных
+### Использование как основной базы данных
 
-Процесс установки описан в документации по установке; основное отличие заключается в переменных окружения.
+Порядок настройки см. в документации по установке; основное отличие связано с переменными окружения.
 
 #### Переменные окружения
 
-Отредактируйте файл .env, чтобы добавить или изменить следующие переменные окружения:
+Отредактируйте файл `.env`, добавив или изменив следующие параметры переменных окружения:
 
 ```bash
-# Настройте параметры БД по мере необходимости
+# При необходимости скорректируйте параметры БД
 DB_DIALECT=kingbase
 DB_HOST=localhost
 DB_PORT=54321
@@ -36,31 +32,31 @@ DB_USER=nocobase
 DB_PASSWORD=nocobase
 ```
 
-#### Установка с помощью Docker
+#### Установка через Docker
 
 ```yml
-version: "3"
-
 networks:
   nocobase:
     driver: bridge
 
+services:
   app:
     image: registry.cn-shanghai.aliyuncs.com/nocobase/nocobase:latest
     restart: always
     networks:
       - nocobase
     depends_on:
-      - postgres
+      - kingbase
     environment:
-      # Ключ приложения для генерации токенов пользователей и т.д.
-      # Изменение APP_KEY аннулирует старые токены
+      # Ключ приложения для генерации пользовательских токенов и т.д.
+      # При изменении APP_KEY старые токены станут недействительны
       # Используйте случайную строку и храните ее в секрете
       - APP_KEY=your-secret-key
       # Тип базы данных
       - DB_DIALECT=kingbase
       # Хост базы данных, при необходимости замените на IP существующего сервера БД
       - DB_HOST=kingbase
+      - DB_PORT=54321
       # Имя базы данных
       - DB_DATABASE=kingbase
       # Пользователь базы данных
@@ -68,11 +64,11 @@ networks:
       # Пароль базы данных
       - DB_PASSWORD=nocobase
       # Часовой пояс
-      - TZ=Asia/Shanghai
+      - TZ=UTC
     volumes:
       - ./storage:/app/nocobase/storage
     ports:
-      - "13000:80"
+      - "11000:80"
 
   # Сервис Kingbase только для целей тестирования
   kingbase:
@@ -93,7 +89,7 @@ networks:
     command: ["/usr/sbin/init"]
 ```
 
-#### Установка с помощью create-nocobase-app
+#### Установка через create-nocobase-app
 
 ```bash
 yarn create nocobase-app my-nocobase-app -d kingbase \
@@ -102,24 +98,24 @@ yarn create nocobase-app my-nocobase-app -d kingbase \
    -e DB_DATABASE=kingbase \
    -e DB_USER=nocobase \
    -e DB_PASSWORD=nocobase \
-   -e TZ=Asia/Shanghai
+   -e TZ=UTC
 ```
 
-### Использование в качестве внешней базы данных
+### Использование как внешней базы данных
 
-Выполните команду установки или обновления:
+Выполните команду установки или обновления
 
 ```bash
 yarn nocobase install
-# or
+# или
 yarn nocobase upgrade
 ```
 
-Активируйте плагин:
+Активируйте плагин
 
 ![20241024121815](https://static-docs.nocobase.com/20241024121815.png)
 
-## Руководство пользователя
+## Руководство пользовател
 
-- Основная база данных: См. [Основной источник данных](/data-sources/data-source-main/)
-- Внешняя база данных: См. [Источник данных / Внешняя база данных](/data-sources/data-source-manager/external-database)
+- Основная база данных: см. [Основной источник данных](/data-sources/data-source-main/)
+- Внешняя база данных: см. [Источники данных / Внешняя база данных](/data-sources/data-source-manager/external-database)
