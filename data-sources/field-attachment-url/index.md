@@ -1,10 +1,6 @@
 ---
 pkg: "@nocobase/plugin-field-attachment-url"
 ---
-:::tip Уведомление о переводе ИИ
-Эта документация была автоматически переведена ИИ.
-:::
-
 
 # Поле данных: Вложение (URL)
 
@@ -18,7 +14,7 @@ pkg: "@nocobase/plugin-field-attachment-url"
 
 ## Руководство пользователя
 
-### Настройка поля
+### Конфигурация поля
 
 ![20241017092323](https://static-docs.nocobase.com/20241017092323.png)
 
@@ -29,3 +25,4 @@ pkg: "@nocobase/plugin-field-attachment-url"
 ### Интерфейс
 
 ![20241017092759](https://static-docs.nocobase.com/20241017092759.png)
+
