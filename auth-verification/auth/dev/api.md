@@ -14,7 +14,9 @@
 
 #### Обзор
 
-`AuthModel` — это аутентификатор, используемый в приложениях NocoBase (`Authenticator`, справка: [AuthManager - setStorer](/api/auth/auth-manager#setstorer) и модели данных [Auth - constructor](/api/auth/auth#constructor)), предоставляющий некоторые методы для взаимодействия с коллекцией данных пользователей. Кроме того, могут использоваться и методы, предоставляемые Sequelize Model.
+`AuthModel` — это аутентификатор, используемый в приложениях NocoBase,  предоставляющий некоторые методы для взаимодействия с коллекцией данных пользователей. Кроме того, могут использоваться и методы, предоставляемые Sequelize Model.
+
+Справка: [AuthManager - setStorer](/api/auth/auth-manager#setstorer) и модели данных [Auth - constructor](/api/auth/auth#constructor)),
 
 ```ts
 import { AuthModel } from '@nocobase/plugin-auth';
@@ -38,7 +40,7 @@ class CustomAuth extends BaseAuth {
 
 - `newUser(uuid: string, userValues?: any): UserModel` — создать нового пользователя и привязать его к текущему аутентификатору через `uuid`.
   - `uuid` — уникальный идентификатор пользователя для текущего типа аутентификации
-  - `userValues` — опционально. Другая информация о пользователе. Если не передано, `uuid` будет использован как nickname пользователя.
+  - `userValues` — опционально. Другая информация о пользователе. Если не передано, `uuid` будет использован как никнейм пользователя.
 
 - `findOrCreateUser(uuid: string, userValues?: any): UserModel` — найти или создать пользователя; правило создания то же, что указано выше.
   - `uuid` — уникальный идентификатор пользователя для текущего типа аутентификации

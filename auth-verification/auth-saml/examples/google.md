@@ -10,7 +10,7 @@
 
 ![](https://static-docs.nocobase.com/aafd20a794730e85411c0c8f368637e0.png)
 
-## Добавить новый аутентификатор в NocoBase (Add a new Authenticator on NocoBase)
+## Добавить новый аутентификатор в NocoBase 
 
 Параметры плагина — Аутентификация пользователей — Добавить — SAML
 
