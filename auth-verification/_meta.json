@@ -1,7 +1,7 @@
 [
   {
     "type": "custom-link",
-    "label": "Аутентификация пользователя",
+    "label": "Аутентификация",
     "items": [
       {
         "type": "custom-link",
@@ -10,12 +10,12 @@
       },
       {
         "type": "custom-link",
-        "label": "Управление аутентификаторами",
+        "label": "Аутентификаторы",
         "link": "/auth-verification/auth/authenticators"
       },
       {
         "type": "custom-link",
-        "label": "Типы аутентификации",
+        "label": "Тип аутентификации",
         "items": [
           {
             "type": "custom-link",
@@ -34,7 +34,7 @@
             "items": [
               {
                 "type": "custom-link",
-                "label": "Настройки",
+                "label": "Конфигураци",
                 "link": "/auth-verification/auth-oidc/"
               },
               {
@@ -43,12 +43,12 @@
                 "items": [
                   {
                     "type": "custom-link",
-                    "label": "Вход через Google",
+                    "label": "Google",
                     "link": "/auth-verification/auth-oidc/examples/google"
                   },
                   {
                     "type": "custom-link",
-                    "label": "Вход через Microsoft",
+                    "label": "Microsoft Entra ID",
                     "link": "/auth-verification/auth-oidc/examples/microsoft"
                   }
                 ]
@@ -62,7 +62,7 @@
             "items": [
               {
                 "type": "custom-link",
-                "label": "Настройки",
+                "label": "Конфигурация",
                 "link": "/auth-verification/auth-saml/"
               },
               {
@@ -71,7 +71,7 @@
                 "items": [
                   {
                     "type": "custom-link",
-                    "label": "Вход через Google",
+                    "label": "Google Workspace",
                     "link": "/auth-verification/auth-saml/examples/google"
                   }
                 ]
@@ -90,34 +90,24 @@
           },
           {
             "type": "custom-link",
-            "label": "WeChat Work",
-            "link": "/auth-verification/auth-wecom/"
-          },
-          {
-            "type": "custom-link",
-            "label": "DingTalk",
-            "link": "/auth-verification/auth-dingtalk/"
-          },
-          {
-            "type": "custom-link",
-            "label": "Ключи API",
+            "label": "API-ключи",
             "link": "/auth-verification/api-keys/"
           }
         ]
       },
       {
         "type": "dir",
-        "label": "Руководство для разработчиков",
+        "label": "Разработка",
         "collapsed": true,
         "items": [
           {
             "type": "custom-link",
-            "label": "Расширение типов аутентификации",
+            "label": "Расширение типа аутентификации",
             "link": "/auth-verification/auth/dev"
           },
           {
             "type": "custom-link",
-            "label": "Справочник API",
+            "label": "API",
             "link": "/auth-verification/auth/dev/api"
           }
         ]
@@ -135,7 +125,7 @@
       },
       {
         "type": "custom-link",
-        "label": "Типы верификации",
+        "label": "Тип верификации",
         "items": [
           {
             "type": "custom-link",
@@ -152,26 +142,26 @@
       {
         "type": "dir",
         "collapsed": true,
-        "label": "Руководство для разработчиков",
+        "label": "Разработка",
         "items": [
           {
             "type": "custom-link",
-            "label": "Расширение типов верификации",
+            "label": "Расширение типа верификации",
             "link": "/auth-verification/verification/dev/type"
           },
           {
             "type": "custom-link",
-            "label": "Расширение сценариев верификации",
+            "label": "Расширение сценария верификации",
             "link": "/auth-verification/verification/dev/scene"
           },
           {
             "type": "custom-link",
-            "label": "Расширение провайдеров SMS",
+            "label": "Расширение SMS-провайдера",
             "link": "/auth-verification/verification/dev/sms-type"
           },
           {
             "type": "custom-link",
-            "label": "Справочник API",
+            "label": "API",
             "link": "/auth-verification/verification/dev/api"
           }
         ]
